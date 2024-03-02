@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8oh6pftahlwe"]
+
+[ext_resource type="Script" path="res://Block/Block.gd" id="1_dvh7j"]
+[ext_resource type="Texture2D" uid="uid://b0seerhtfcdt3" path="res://Wood.png" id="1_jo17x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8wujy"]
+size = Vector3(0.2, 0.2, 1.71)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0j845"]
+resource_name = "材质"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_jo17x")
+metallic_specular = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_4dcyq"]
+_surfaces = [{
+"aabb": AABB(-0.1, -0.025, -0.855, 0.2, 0.05, 1.71001),
+"format": 4097,
+"index_count": 18,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0, 6, 0, 5, 0, 7, 0, 6, 0, 4, 0, 5, 0, 7, 0, 1, 0, 3, 0, 7, 0, 5, 0, 1, 0),
+"name": "材质",
+"primitive": 3,
+"vertex_count": 8,
+"vertex_data": PackedByteArray(208, 204, 204, 189, 192, 204, 204, 188, 71, 225, 90, 63, 208, 204, 204, 189, 192, 204, 204, 60, 71, 225, 90, 63, 208, 204, 204, 189, 192, 204, 204, 188, 71, 225, 90, 191, 208, 204, 204, 189, 192, 204, 204, 60, 71, 225, 90, 191, 208, 204, 204, 61, 192, 204, 204, 188, 71, 225, 90, 63, 208, 204, 204, 61, 192, 204, 204, 60, 71, 225, 90, 63, 208, 204, 204, 61, 192, 204, 204, 188, 71, 225, 90, 191, 208, 204, 204, 61, 192, 204, 204, 60, 71, 225, 90, 191)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_4sm6y"]
+resource_name = "无标题_立方体003"
+_surfaces = [{
+"aabb": AABB(-0.1, -0.025, -0.855, 0.2, 0.05, 1.71001),
+"attribute_data": PackedByteArray(201, 43, 212, 50, 255, 255, 127, 63, 167, 188, 134, 60, 255, 255, 127, 63, 167, 188, 134, 60, 255, 255, 127, 63, 0, 0, 0, 0, 0, 0, 128, 51, 153, 188, 134, 60, 0, 0, 128, 51, 153, 188, 134, 60, 0, 0, 128, 51, 244, 26, 202, 61, 0, 0, 128, 63, 205, 107, 168, 61, 0, 0, 128, 63, 205, 107, 168, 61, 0, 0, 128, 63, 240, 26, 202, 61, 0, 0, 0, 52, 203, 107, 168, 61, 0, 0, 0, 52, 203, 107, 168, 61, 0, 0, 0, 52),
+"format": 4119,
+"index_count": 18,
+"index_data": PackedByteArray(0, 0, 4, 0, 1, 0, 0, 0, 3, 0, 4, 0, 9, 0, 8, 0, 11, 0, 9, 0, 6, 0, 8, 0, 10, 0, 2, 0, 5, 0, 10, 0, 7, 0, 2, 0),
+"material": SubResource("StandardMaterial3D_0j845"),
+"name": "材质",
+"primitive": 3,
+"vertex_count": 12,
+"vertex_data": PackedByteArray(208, 204, 204, 189, 192, 204, 204, 188, 71, 225, 90, 63, 0, 0, 255, 127, 255, 127, 255, 255, 208, 204, 204, 189, 192, 204, 204, 60, 71, 225, 90, 63, 0, 0, 255, 127, 255, 127, 255, 255, 208, 204, 204, 189, 192, 204, 204, 60, 71, 225, 90, 63, 255, 127, 255, 255, 255, 255, 255, 191, 208, 204, 204, 189, 192, 204, 204, 188, 71, 225, 90, 191, 0, 0, 255, 127, 255, 127, 255, 255, 208, 204, 204, 189, 192, 204, 204, 60, 71, 225, 90, 191, 0, 0, 255, 127, 255, 127, 255, 255, 208, 204, 204, 189, 192, 204, 204, 60, 71, 225, 90, 191, 255, 127, 255, 255, 255, 255, 255, 191, 208, 204, 204, 61, 192, 204, 204, 188, 71, 225, 90, 63, 255, 255, 255, 127, 255, 127, 0, 128, 208, 204, 204, 61, 192, 204, 204, 60, 71, 225, 90, 63, 255, 127, 255, 255, 255, 255, 255, 191, 208, 204, 204, 61, 192, 204, 204, 60, 71, 225, 90, 63, 255, 255, 255, 127, 255, 127, 0, 128, 208, 204, 204, 61, 192, 204, 204, 188, 71, 225, 90, 191, 255, 255, 255, 127, 255, 127, 0, 128, 208, 204, 204, 61, 192, 204, 204, 60, 71, 225, 90, 191, 255, 127, 255, 255, 255, 255, 255, 191, 208, 204, 204, 61, 192, 204, 204, 60, 71, 225, 90, 191, 255, 255, 255, 127, 255, 127, 0, 128)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_4dcyq")
+
+[node name="Block" type="StaticBody3D"]
+script = ExtResource("1_dvh7j")
+
+[node name="1" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.075, 0)
+shape = SubResource("BoxShape3D_8wujy")
+
+[node name="Mesh" type="MeshInstance3D" parent="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.075, 0)
+mesh = SubResource("ArrayMesh_4sm6y")
+skeleton = NodePath("")
+
+[node name="2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0253807, 0)
+shape = SubResource("BoxShape3D_8wujy")
+
+[node name="Mesh" type="MeshInstance3D" parent="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.075, 0)
+mesh = SubResource("ArrayMesh_4sm6y")
+skeleton = NodePath("")
+
+[node name="3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0246146, 0)
+shape = SubResource("BoxShape3D_8wujy")
+
+[node name="Mesh" type="MeshInstance3D" parent="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.075, 0)
+mesh = SubResource("ArrayMesh_4sm6y")
+skeleton = NodePath("")

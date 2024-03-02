@@ -1,0 +1,197 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1d67h5erqhum"]
+
+[ext_resource type="Script" path="res://Control/Control.gd" id="1_qjjpe"]
+[ext_resource type="AudioStream" uid="uid://1ei15g8wofnd" path="res://Fail.wav" id="2_mfhqq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_my08r"]
+bg_color = Color(0, 0, 0, 0.25)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_um8ej"]
+
+[node name="Control" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qjjpe")
+
+[node name="Stop" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_my08r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_my08r")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_my08r")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_my08r")
+theme_override_styles/focus = SubResource("StyleBoxFlat_my08r")
+
+[node name="Num" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 50.0
+
+[node name="Label" type="Label" parent="Num"]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 50.0
+text = "深度"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Num" type="Label" parent="Num"]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 250.0
+offset_bottom = 50.0
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Max" type="Panel" parent="."]
+layout_mode = 0
+offset_top = 55.0
+offset_right = 250.0
+offset_bottom = 205.0
+
+[node name="Simple" type="Label" parent="Max"]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 250.0
+offset_bottom = 50.0
+text = "无记录"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Max/Simple"]
+layout_mode = 0
+offset_left = -100.0
+offset_bottom = 50.0
+text = "简单"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Medium" type="Label" parent="Max"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 50.0
+offset_right = 250.0
+offset_bottom = 100.0
+text = "无记录"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Max/Medium"]
+layout_mode = 0
+offset_left = -100.0
+offset_bottom = 50.0
+text = "中等"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Difficulty" type="Label" parent="Max"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 250.0
+offset_bottom = 150.0
+text = "无记录"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Max/Difficulty"]
+layout_mode = 0
+offset_left = -100.0
+offset_bottom = 50.0
+text = "困难"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Speed" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -250.0
+offset_bottom = 50.0
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="Speed"]
+layout_mode = 0
+offset_left = 150.0
+offset_right = 250.0
+offset_bottom = 50.0
+text = "速度"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Speed" type="Label" parent="Speed"]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 50.0
+text = "1.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Difficulty" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -250.0
+offset_top = 56.0
+offset_bottom = 206.0
+grow_horizontal = 0
+
+[node name="Simple" type="Button" parent="Difficulty"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 245.0
+offset_bottom = 45.0
+focus_mode = 0
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_um8ej")
+text = "简单"
+
+[node name="Medium" type="Button" parent="Difficulty"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 55.0
+offset_right = 245.0
+offset_bottom = 95.0
+focus_mode = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_um8ej")
+text = "中等"
+
+[node name="Difficulty" type="Button" parent="Difficulty"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 105.0
+offset_right = 245.0
+offset_bottom = 145.0
+focus_mode = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_um8ej")
+text = "困难"
+
+[node name="Fail" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_mfhqq")
+volume_db = -5.0
+
+[connection signal="pressed" from="Stop" to="." method="_on_stop_pressed"]
+[connection signal="pressed" from="Difficulty/Simple" to="." method="_on_simple_pressed"]
+[connection signal="pressed" from="Difficulty/Medium" to="." method="_on_medium_pressed"]
+[connection signal="pressed" from="Difficulty/Difficulty" to="." method="_on_difficulty_pressed"]
